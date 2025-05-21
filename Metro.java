@@ -16,5 +16,10 @@ public class Metro extends Actor
     {
         // Add your action code here.
         setLocation(getX(), getY() + 1);
+        
+        if (getY() >= 750)
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
