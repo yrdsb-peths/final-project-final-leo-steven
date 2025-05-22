@@ -15,11 +15,12 @@ public class Metro extends Actor
     public void act()
     {
         // Add your action code here.
-        setLocation(getX(), getY() + 1);
+        setLocation(getX(), getY() + 2);
         
-        if (getY() >= 750)
+        if (getY() >= 725)
         {
-            getWorld().removeObject(this);
+            int newX =  Greenfoot.getRandomNumber(getWorld().getWidth());
+            setLocation(newX,0);
         }
     }
 }
