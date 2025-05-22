@@ -6,6 +6,9 @@ public class MyWorld extends World
     {
         super(525,750, 1);
         createm();
+        
+        Ship ship = new Ship();
+        addObject(ship, 275, 650);
     }
     
     public void createm()
