@@ -12,14 +12,20 @@ public class Ship extends Actor
      * Act - do whatever the Ship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
+    
     public Ship()
     {
-        GreenfootImage myImage = getImage();
-        myImage.scale(150, 150);
+        GreenfootImage shipImage = getImage();
+        shipImage.scale(120, 120);
     }
     
     public void act()
+    {
+        moveAround();
+        shoot();
+    }
+    
+    public void moveAround()
     {
         if(Greenfoot.isKeyDown("left"))
         {
@@ -28,6 +34,15 @@ public class Ship extends Actor
         else if(Greenfoot.isKeyDown("right"))
         {
             move(10);
+        }
+    }
+    
+    public void shoot()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            Laser laser = new Laser();
+            getWorld().addObject(new Laser(), getX(), getY() - 50);
         }
     }
 }

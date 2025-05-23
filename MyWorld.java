@@ -8,7 +8,7 @@ public class MyWorld extends World
         createm();
         
         Ship ship = new Ship();
-        addObject(ship, 275, 650);
+        addObject(ship, 275, 675);
     }
     
     public void createm()
