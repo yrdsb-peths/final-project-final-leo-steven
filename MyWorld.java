@@ -4,8 +4,9 @@ public class MyWorld extends World
 {
     
     private int wave = 0;
-    private int metrosSpawn = 0;
-    private int spawnDelay = 0;
+    private int metrosToSpawn = 0;
+    private int spawnedMetros = 0;
+    private int spawnDelay = 60;
     private int currentDelay = 0;
     private int timer = 0;
     private final int minute = 60 * 60;
@@ -24,19 +25,34 @@ public class MyWorld extends World
     {
         timer++;
         
-        if (timer >= minute)
+        if(timer >= minute)
         {
             timer = 0;
             startNextWave();
         }
+        
+        if(spawnedMetros < metrosToSpawn)
+        {
+            currentDelay++;
+            if(currentDelay >= spawnDelay)
+            {
+                createM();
+                spawnedMetros++;
+                currentDelay = 0;
+            }
+        }
     }
     
-    private void startNextWave()
+    public void startNextWave()
     {
         wave++;
         waveLabel.setValue("Wave" + wave);
         
-        metrosSpawn = 
+        metrosToSpawn = wave * 3;
+        spawnedMetros = 0;
+        currentDelay = 0;
+        
+
     }
     
     public void createM()
