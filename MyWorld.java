@@ -46,9 +46,9 @@ public class MyWorld extends World
     public void startNextWave()
     {
         wave++;
-        waveLabel.setValue("Wave" + wave);
+        waveLabel.setValue("Wave " + wave);
         
-        metrosToSpawn = wave * 3;
+        metrosToSpawn = wave + 1;
         spawnedMetros = 0;
         currentDelay = 0;
         
