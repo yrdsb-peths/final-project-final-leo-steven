@@ -22,6 +22,10 @@ public class Laser extends Actor
     public void act()
     {
         moveLaser();
+        if(getY() == 0)
+        {
+            getWorld().removeObject(this);
+        }
     }
     
     public void moveLaser()

@@ -42,7 +42,7 @@ public class Ship extends Actor
         if(Greenfoot.isKeyDown("space"))
         {
             Laser laser = new Laser();
-            getWorld().addObject(new Laser(), getX(), getY() - 50);
+            getWorld().addObject(laser, getX(), getY() - 50);
         }
     }
 }
