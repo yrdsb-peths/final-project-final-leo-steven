@@ -15,7 +15,7 @@ public class MyWorld extends World
     public MyWorld() 
     {
         super(525,750, 1);
-        Ship ship = New ship
+        Ship ship = new Ship();
         waveLabel = new Label ("Wave 0", 40);
         addObject(waveLabel, 60, 50);
         createM();
