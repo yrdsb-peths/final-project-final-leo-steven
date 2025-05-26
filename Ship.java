@@ -13,6 +13,8 @@ public class Ship extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    private int shootCooldown = 0;
+    
     public Ship()
     {
         GreenfootImage shipImage = getImage();
@@ -23,6 +25,11 @@ public class Ship extends Actor
     {
         moveAround();
         shoot();
+    
+        if(shootCooldown > 0)
+        {
+            shootCooldown--;
+        }
     }
     
     public void moveAround()
@@ -39,10 +46,11 @@ public class Ship extends Actor
     
     public void shoot()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space") && shootCooldown == 0)
         {
             Laser laser = new Laser();
             getWorld().addObject(laser, getX(), getY() - 50);
+            shootCooldown = 20;
         }
     }
 }

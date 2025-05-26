@@ -26,8 +26,12 @@ public class Laser extends Actor
         {
             getWorld().removeObject(this);
         }
+        else if (isTouching(Metro.class))
+        {
+            getWorld().removeObject(this);
+        }
     }
-    
+      
     public void moveLaser()
     {
         setLocation(getX(), getY() - 10);
