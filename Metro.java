@@ -16,8 +16,7 @@ public class Metro extends Actor
     {
         // Add your action code here.
         setLocation(getX(), getY() + 2);
-        hit();
-        
+        hit();        
         if (getY() >= 725)
         {
             int newX =  Greenfoot.getRandomNumber(getWorld().getWidth());
@@ -30,7 +29,6 @@ public class Metro extends Actor
         if (isTouching(Laser.class))
         {
             getWorld().removeObject(this);
-            return;
         }
     }
 }
