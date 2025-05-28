@@ -53,5 +53,15 @@ public class TitleScreen extends World
         label2.setLocation(315,311);
         label2.setLocation(276,315);
         label2.setLocation(282,319);
+        label2.setLocation(341,338);
+        Label label3 = new Label("Press <space> to shoot", 40);
+        addObject(label3,260,453);
+        label3.setLocation(287,439);
+        label.setLocation(316,382);
+        label.setLocation(270,382);
+        label3.setLocation(243,438);
+        label3.setLocation(268,433);
+        label2.setLocation(279,329);
+        label2.setLocation(268,330);
     }
 }
