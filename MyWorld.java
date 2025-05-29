@@ -8,7 +8,6 @@ public class MyWorld extends World
     private int spawnedMetros = 0;
     private int spawnDelay = 60;
     private int currentDelay = 0;
-    private int timer = 0;
     private final int minute = 60 * 60;
     private Label waveLabel; 
     
@@ -24,11 +23,10 @@ public class MyWorld extends World
     
     public void act()
     {
-        timer++;
+        int numOfMetro = getObjects(Metro.class).size();
         
-        if(timer >= minute)
+        if(numOfMetro == 0 && spawnedMetros >= metrosToSpawn)
         {
-            timer = 0;
             startNextWave();
         }
         

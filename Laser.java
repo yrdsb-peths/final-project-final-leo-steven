@@ -22,11 +22,14 @@ public class Laser extends Actor
     public void act()
     {
         moveLaser();
-        if(getY() == 0)
+        
+        if (isTouching(Metro.class))
         {
+            removeTouching(Metro.class);
             getWorld().removeObject(this);
+            return;
         }
-        else if (isTouching(Metro.class))
+        if(getY() == 0)
         {
             getWorld().removeObject(this);
         }
