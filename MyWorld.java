@@ -4,6 +4,7 @@ public class MyWorld extends World
 {
     
     private int wave = 0;
+    public int speed = 1;
     private int metrosToSpawn = 0;
     private int spawnedMetros = 0;
     private int spawnDelay = 60;
@@ -50,8 +51,7 @@ public class MyWorld extends World
         metrosToSpawn = wave + 1;
         spawnedMetros = 0;
         currentDelay = 0;
-        
-
+        speed++;
     }
     
     public void createM()
