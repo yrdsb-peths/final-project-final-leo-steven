@@ -34,15 +34,28 @@ public class Ship extends Actor
     
     public void moveAround()
     {
-        if(Greenfoot.isKeyDown("left"))
+        int x = getX();
+        int y = getY();
+        
+        if (Greenfoot.isKeyDown("a"))
         {
-            move(-10);
+            x -= 10;
         }
-        else if(Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d"))
         {
-            move(10);
+            x += 10;
         }
-    }
+        if (Greenfoot.isKeyDown("w"))
+        {
+            y -= 10;
+        }
+        if (Greenfoot.isKeyDown("s"))
+        {
+            y += 10;
+        }
+        
+        setLocation(x, y);
+    }   
     
     public void shoot()
     {
