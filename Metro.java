@@ -39,7 +39,7 @@ public class Metro extends Actor
         if (isTouching(Laser.class))
         {
             removeTouching(Laser.class);
-            hp--;
+            hp = hp - Laser.atk; 
             if(hp <= 0)
             {
                 getWorld().removeObject(this);

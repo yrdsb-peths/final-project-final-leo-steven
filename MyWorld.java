@@ -11,6 +11,7 @@ public class MyWorld extends World
     private int currentDelay = 0;
     private final int minute = 60 * 60;
     private Label waveLabel; 
+    private Label timerLabel; 
     
     public MyWorld() 
     {
@@ -19,7 +20,10 @@ public class MyWorld extends World
         addObject(ship, 250, 700);
         waveLabel = new Label ("Wave 0", 40);
         addObject(waveLabel, 60, 50);
+        timerLabel = new Label (Buff1.timer, 30);
+        addObject(timerLabel, 470,50);
         createM();
+        createBuff();
     }
     
     public void act()
@@ -60,5 +64,13 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(525);
         int y = 0;
         addObject(m, x, y);        
+    }
+    
+    public void createBuff()
+    {
+        Buff1 b = new Buff1();
+        int x = Greenfoot.getRandomNumber(525);
+        int y = Greenfoot.getRandomNumber(750);
+        addObject(b, x, y);
     }
 }

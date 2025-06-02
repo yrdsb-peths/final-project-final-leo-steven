@@ -12,6 +12,9 @@ public class Laser extends Actor
      * Act - do whatever the Laser wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public static int atk = 1;
+    
     public Laser()
     {
         GreenfootImage laser = getImage();
@@ -22,6 +25,7 @@ public class Laser extends Actor
     public void act()
     {
         moveLaser();
+        timer();
         if (getY() == 0)
         {
             getWorld().removeObject(this);
@@ -31,5 +35,17 @@ public class Laser extends Actor
     public void moveLaser()
     {
         setLocation(getX(), getY() - 10);
+    }
+    
+    public void timer()
+    {
+        if (Buff1.timer > 0)
+        {
+            Buff1.timer--;
+            if(Buff1.timer == 0)
+            {
+                atk--;
+            }
+        }
     }
 }
