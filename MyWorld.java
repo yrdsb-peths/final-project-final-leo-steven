@@ -11,7 +11,10 @@ public class MyWorld extends World
     private int currentDelay = 0;
     private final int minute = 60 * 60;
     private Label waveLabel; 
-    private Label timerLabel; 
+    private Label timerLabel;
+    private static int spawnCounter = 0;
+    private static int spawnInterval = Greenfoot.getRandomNumber(600) + 400;
+    
     
     public MyWorld() 
     {
@@ -45,6 +48,8 @@ public class MyWorld extends World
                 currentDelay = 0;
             }
         }
+        timer();
+        spawn();
     }
     
     public void startNextWave()
@@ -73,4 +78,33 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(750);
         addObject(b, x, y);
     }
+    
+    public void timer()
+    {
+        if (Buff1.timer > 0)
+        {
+            Buff1.timer--;
+            timerLabel.setValue("Timer: " + Buff1.timer/60 + "s");
+        }
+    }
+    
+    public void spawn()
+    {
+        
+        spawnCounter++;
+        if (spawnCounter >= spawnInterval)
+        {
+            spawnCounter = 0;
+            spawnInterval = Greenfoot.getRandomNumber(600) + 400;
+            
+            if (getObjects(Buff1.class).size() < 1)
+            {
+                int x = Greenfoot.getRandomNumber(getWidth());
+                int y = Greenfoot.getRandomNumber(getHeight());
+                Buff1 b = new Buff1();
+                addObject(b,x ,y);
+            }
+        }
+    }
 }
+

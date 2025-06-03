@@ -13,14 +13,19 @@ public class Buff1 extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public static int timer = 0;
-    private final int sec = 30 * 60;
+
     public void act()
     {
+        isTouching();
+    }
+    
+    public void isTouching()
+    {
         if (isTouching(Ship.class))
-        {
+        {   
             getWorld().removeObject(this);
             Laser.atk++;
-            timer = 30 * sec;
+            timer = 30 * 60; 
         }
     }
 }
