@@ -8,10 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ship extends Actor
 {
-    /**
-     * Act - do whatever the Ship wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound laserSound = new GreenfootSound("lasersound.mp3");
     
     public Ship()
     {
@@ -43,6 +40,7 @@ public class Ship extends Actor
         {
             Laser laser = new Laser();
             getWorld().addObject(laser, getX(), getY() - 50);
+            laserSound.play();
         }
     }
 }

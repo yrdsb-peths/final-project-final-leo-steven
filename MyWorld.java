@@ -10,7 +10,7 @@ public class MyWorld extends World
         Ship ship = new Ship();
         addObject(ship, 275, 675);
         
-        int numBombs = Greenfoot.getRandomNumber(3);
+        int numBombs = Greenfoot.getRandomNumber(2);
         for(int i = 0; i < numBombs; i++)
         {
             createBomb();

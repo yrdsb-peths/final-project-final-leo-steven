@@ -32,4 +32,6 @@ public class Laser extends Actor
     {
         setLocation(getX(), getY() - 10);
     }
+    
+    
 }
