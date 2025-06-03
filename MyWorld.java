@@ -1,8 +1,7 @@
 import greenfoot.*;
 
 public class MyWorld extends World 
-{
-    
+{  
     private int wave = 0;
     public int speed = 1;
     private int metrosToSpawn = 0;
@@ -15,9 +14,9 @@ public class MyWorld extends World
     private static int spawnCounter = 0;
     private static int spawnInterval = Greenfoot.getRandomNumber(600) + 400;
     
-    
     public MyWorld() 
     {
+
         super(525,750, 1);
         Ship ship = new Ship();
         addObject(ship, 250, 700);
@@ -27,6 +26,13 @@ public class MyWorld extends World
         addObject(timerLabel, 470,50);
         createM();
         createBuff();
+        
+        int numBombs = Greenfoot.getRandomNumber(2);
+        for(int i = 0; i < numBombs; i++)
+        {
+            createBomb();
+        }
+
     }
     
     public void act()
@@ -78,7 +84,7 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(750);
         addObject(b, x, y);
     }
-    
+        
     public void timer()
     {
         if (Buff1.timer > 0)
@@ -87,16 +93,16 @@ public class MyWorld extends World
             timerLabel.setValue("Timer: " + Buff1.timer/60 + "s");
         }
     }
-    
+        
     public void spawn()
     {
-        
+            
         spawnCounter++;
         if (spawnCounter >= spawnInterval)
         {
             spawnCounter = 0;
             spawnInterval = Greenfoot.getRandomNumber(600) + 400;
-            
+                
             if (getObjects(Buff1.class).size() < 1)
             {
                 int x = Greenfoot.getRandomNumber(getWidth());
@@ -105,6 +111,14 @@ public class MyWorld extends World
                 addObject(b,x ,y);
             }
         }
+    }
+    
+    public void createBomb()
+    {
+        Bomb bomb = new Bomb();
+        int x = Greenfoot.getRandomNumber(525);
+        int y = 0;
+        addObject(bomb, x, y);
     }
 }
 

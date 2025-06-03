@@ -37,6 +37,7 @@ public class Laser extends Actor
         setLocation(getX(), getY() - 10);
     }
     
+
     public void timer()
     {
         if (Buff1.timer > 0)
