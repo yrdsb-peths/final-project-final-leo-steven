@@ -26,6 +26,7 @@ public class Bomb extends Actor
         {
             getWorld().removeObject(this);
         }
+        
     }
     
     public void setSpeed(int spd)

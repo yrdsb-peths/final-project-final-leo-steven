@@ -26,6 +26,7 @@ public class Laser extends Actor
         {
             getWorld().removeObject(this);
         }
+        
     }
     
     public void moveLaser()

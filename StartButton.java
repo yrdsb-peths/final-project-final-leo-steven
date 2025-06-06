@@ -10,7 +10,7 @@ public class StartButton extends Actor
 {
     public StartButton() 
     {
-         GreenfootImage startImage = getImage();
+        GreenfootImage startImage = getImage();
         startImage.scale(400, 400);
         setImage(startImage);
     }
