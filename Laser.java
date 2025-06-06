@@ -22,11 +22,16 @@ public class Laser extends Actor
     public void act()
     {
         moveLaser();
+        if(isTouching(Bomb.class))
+        {
+            Greenfoot.setWorld(new EndScreen());
+        }
+        
         if(getY() == 0)
         {
             getWorld().removeObject(this);
         }
-        
+
     }
     
     public void moveLaser()
