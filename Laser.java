@@ -14,6 +14,7 @@ public class Laser extends Actor
      */
     
     public static int atk = 1;
+    GreenfootSound explosion = new GreenfootSound("explosion.mp3");
     
     public Laser()
     {
@@ -29,6 +30,7 @@ public class Laser extends Actor
         
         if(isTouching(Bomb.class))
         {
+            explosion.play();
             Greenfoot.setWorld(new EndScreen());
         }
         

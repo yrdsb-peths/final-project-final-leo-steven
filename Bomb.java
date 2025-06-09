@@ -12,7 +12,7 @@ public class Bomb extends Actor
      * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    GreenfootSound explosion = new GreenfootSound("explosion.mp3");
     int speed = 1;
     public void act()
     {
@@ -22,9 +22,15 @@ public class Bomb extends Actor
         
         setLocation(getX(), getY() + 1);
         
-        if (getY() >= 750)
+        if (getY() >= 700)
         {
             getWorld().removeObject(this);
+        }
+        
+        if(isTouching(Ship.class))
+        {
+            explosion.play();
+            Greenfoot.setWorld(new EndScreen());
         }
         
     }

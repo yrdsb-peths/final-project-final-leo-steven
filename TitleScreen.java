@@ -43,7 +43,7 @@ public class TitleScreen extends World
         addObject(ship,271,550);
         ship.setLocation(261,600);
         ship.setLocation(269,600);
-        Label label = new Label("Use \u2190 and \u2192 to Move", 40);
+        Label label = new Label("Use WASD to Move", 40);
         addObject(label,260,413);
         Label label3 = new Label("Press <space> to shoot", 40);
         addObject(label3,260,453);
