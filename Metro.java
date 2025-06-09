@@ -8,10 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Metro extends Actor
 {
-    /**
-     * Act - do whatever the Metro wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Metro() {
+        //setImage("images/metro.png");
+    }
     private int hp = 2;
 
     public void act()

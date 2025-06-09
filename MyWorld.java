@@ -21,7 +21,7 @@ public class MyWorld extends World
         Ship ship = new Ship();
         addObject(ship, 250, 700);
         waveLabel = new Label ("Wave 0", 40);
-        addObject(waveLabel, 60, 50);
+        addObject(waveLabel, 65, 30);
         timerLabel = new Label (Buff1.timer, 30);
         addObject(timerLabel, 470,50);
         createM();
