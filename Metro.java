@@ -30,6 +30,7 @@ public class Metro extends Actor
         {
             int newX =  Greenfoot.getRandomNumber(getWorld().getWidth());
             setLocation(newX,0);
+            Greenfoot.setWorld(new EndScreen());
         }
     }
     
