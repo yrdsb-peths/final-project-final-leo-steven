@@ -14,17 +14,24 @@ public class Bomb extends Actor
      */
     GreenfootSound explosion = new GreenfootSound("explosion.mp3");
     int speed = 1;
+    
+    public Bomb()
+    {
+        setImage("bomb.png");
+        
+        GreenfootImage bombImage = getImage();
+        bombImage.scale(90, 90);
+    }
     public void act()
     {
         // Add your action code here.
-        GreenfootImage bombImage = getImage();
-        bombImage.scale(90, 90);
         
         setLocation(getX(), getY() + 1);
         
         if (getY() >= 700)
         {
             getWorld().removeObject(this);
+            return;
         }
         
         if(isTouching(Ship.class))
