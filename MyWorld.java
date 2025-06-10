@@ -60,6 +60,7 @@ public class MyWorld extends World
         timer();
         spawnBuff();
         spawnBomb();
+        ShopWorld(); 
     }
     
     public void startNextWave()
@@ -135,5 +136,13 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(getWidth());
         int y = 0;
         addObject(bomb, x, y);
+    }
+    
+    public void ShopWorld()
+    {
+        if (Greenfoot.isKeyDown("t"))
+        {
+            Greenfoot.setWorld(new ShopWorld());
+        }
     }
 }

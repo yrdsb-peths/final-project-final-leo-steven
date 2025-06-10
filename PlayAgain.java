@@ -15,6 +15,7 @@ public class PlayAgain extends Actor
     
     public PlayAgain()
     {
+        setImage("play again.png");
         GreenfootImage playAgain = getImage();
         playAgain.scale(300, 200);
     }

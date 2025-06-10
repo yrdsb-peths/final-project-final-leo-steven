@@ -18,6 +18,7 @@ public class Laser extends Actor
     
     public Laser()
     {
+        setImage("laser 2.png");
         GreenfootImage laser = getImage();
         setRotation(270);
         laser.scale(50, 20);

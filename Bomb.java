@@ -17,15 +17,14 @@ public class Bomb extends Actor
     
     public Bomb()
     {
-        setImage("bomb.png");
-        
-        GreenfootImage bombImage = getImage();
-        bombImage.scale(90, 90);
+
+        GreenfootImage bombImage = new GreenfootImage("bomb.png.png");
+        bombImage.scale(60,60);
+        setImage(bombImage);
     }
     public void act()
     {
         // Add your action code here.
-        
         setLocation(getX(), getY() + 1);
         
         if (getY() >= 700)
