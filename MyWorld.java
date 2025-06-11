@@ -14,6 +14,9 @@ public class MyWorld extends World
     private static int spawnCounter = 0;
     private static int spawnInterval = Greenfoot.getRandomNumber(600) + 400;
     
+    public int score = 0;
+    Label scoreLabel;
+    
     private int bombSpawnCounter = 0;
     private int bombSpawnInterval = Greenfoot.getRandomNumber(300) + 300;
     
@@ -29,13 +32,6 @@ public class MyWorld extends World
         addObject(timerLabel, 470,50);
         createM();
         createBuff();
-        
-        int numBombs = 1+ Greenfoot.getRandomNumber(2);
-        for(int i = 0; i < numBombs; i++)
-        {
-            createBomb();
-        }
-
     }
     
     public void act()
@@ -136,4 +132,6 @@ public class MyWorld extends World
         int y = 0;
         addObject(bomb, x, y);
     }
+
 }
+

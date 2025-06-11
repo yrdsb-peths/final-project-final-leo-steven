@@ -8,9 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Metro extends Actor
 {
-    public Metro() {
-        //setImage("images/metro.png");
-    }
     private int hp = 2;
 
     public void act()

@@ -13,12 +13,12 @@ public class Bomb extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound explosion = new GreenfootSound("explosion.mp3");
-    int speed = 1;
+    int speed = 4;
     public void act()
     {
         // Add your action code here.
         GreenfootImage bombImage = getImage();
-        bombImage.scale(90, 90);
+        bombImage.scale(50, 50);
         
         setLocation(getX(), getY() + 1);
         
