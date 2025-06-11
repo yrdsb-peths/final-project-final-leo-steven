@@ -18,9 +18,10 @@
         
         public Laser()
         {
-            GreenfootImage laser = getImage();
+            GreenfootImage laser = new GreenfootImage("images/laser.png");
             setRotation(270);
             laser.scale(50, 20);
+            setImage(laser);
         }
         
         public void act()

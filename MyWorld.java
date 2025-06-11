@@ -21,9 +21,12 @@ public class MyWorld extends World
     private int bombSpawnInterval = Greenfoot.getRandomNumber(300) + 300;
     
     public MyWorld() 
-    {
-
+    {  
         super(525,750, 1);
+        
+        GreenfootImage worldBackground = new GreenfootImage("images/background.jpg");
+        setBackground(worldBackground);
+        
         Ship ship = new Ship();
         addObject(ship, 250, 700);
         waveLabel = new Label ("Wave 0", 40);

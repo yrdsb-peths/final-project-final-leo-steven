@@ -14,8 +14,9 @@ public class Ship extends Actor
     
     public Ship()
     {
-        GreenfootImage shipImage = getImage();
+        GreenfootImage shipImage = new GreenfootImage("images/SpaceShip.png");
         shipImage.scale(100, 110);
+        setImage(shipImage);
     }
     
     public void act()

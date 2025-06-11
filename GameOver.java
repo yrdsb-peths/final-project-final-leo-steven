@@ -15,8 +15,9 @@ public class GameOver extends Actor
     
     public GameOver()
     {
-        GreenfootImage overImage = getImage();
+        GreenfootImage overImage = new GreenfootImage("images/gameover.png");
         overImage.scale(450, 300);
+        setImage(overImage);
     }
     
     public void act()

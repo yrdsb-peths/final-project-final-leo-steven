@@ -9,6 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Metro extends Actor
 {
     private int hp = 2;
+    
+    public Metro()
+    {
+        GreenfootImage meteor = new GreenfootImage("images/metro.png");
+        setImage(meteor);
+    }
 
     public void act()
     {

@@ -18,6 +18,9 @@ public class EndScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(525, 750, 1); 
         
+        GreenfootImage endBG = new GreenfootImage("images/end.jpg");
+        setBackground(endBG);
+        
         GameOver over = new GameOver();
         addObject(over, 265, 275);
         

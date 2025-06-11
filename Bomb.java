@@ -14,11 +14,16 @@ public class Bomb extends Actor
      */
     GreenfootSound explosion = new GreenfootSound("explosion.mp3");
     int speed = 4;
+    public Bomb()
+    {
+        GreenfootImage bombImage = new GreenfootImage("images/bomb.png");
+        bombImage.scale(50, 50);
+        setImage(bombImage);
+    }
+    
     public void act()
     {
-        // Add your action code here.
-        GreenfootImage bombImage = getImage();
-        bombImage.scale(50, 50);
+        // Add your action code here
         
         setLocation(getX(), getY() + 1);
         
