@@ -29,7 +29,7 @@ public class MyWorld extends World
         waveLabel = new Label ("Wave 0", 40);
         addObject(waveLabel, 65, 30);
         timerLabel = new Label (Buff1.timer, 30);
-        addObject(timerLabel, 470,50);
+        addObject(timerLabel, 470, 30);
         createM();
         createBuff();
     }
