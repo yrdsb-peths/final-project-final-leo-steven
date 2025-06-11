@@ -58,8 +58,7 @@ public class MyWorld extends World
         }
         timer();
         spawnBuff();
-        spawnBomb();
-        ShopWorld(); 
+        spawnBomb(); 
     }
     
     public void startNextWave()
@@ -70,7 +69,7 @@ public class MyWorld extends World
         metrosToSpawn = wave + 1;
         spawnedMetros = 0;
         currentDelay = 0;
-        speed = speed * 1.15;
+        speed = speed++;
     }
     
     public void createM()
@@ -147,11 +146,4 @@ public class MyWorld extends World
         addObject(bomb, x, y);
     }
     
-    public void ShopWorld()
-    {
-        if (Greenfoot.isKeyDown("t"))
-        {
-            Greenfoot.setWorld(new ShopWorld());
-        }
-    }
 }
