@@ -26,7 +26,6 @@ public class MyWorld extends World
         waveLabel = new Label ("Wave 0", 40);
         addObject(waveLabel, 65, 30);
         timerLabel = new Label (Buff1.timer, 30);
-        addObject(timerLabel, 470,50);
         createM();
         createBuff();
         
@@ -71,7 +70,7 @@ public class MyWorld extends World
         metrosToSpawn = wave + 1;
         spawnedMetros = 0;
         currentDelay = 0;
-        speed++;
+        speed = speed * 1.15;
     }
     
     public void createM()
@@ -95,11 +94,21 @@ public class MyWorld extends World
         if (Buff1.timer > 0) {
             Buff1.timer--;
             timerLabel.setValue("Timer: " + Buff1.timer / 60 + "s");
+            addObject(timerLabel, 470,50);
 
             if (Buff1.timer / 60 < 10) {
                 timerLabel.setFillColor(Color.RED);
             }
         }
+        if (Buff1.timer == 0)
+        {
+           removeObject(timerLabel);
+           if (Laser.atk > 1)
+           {
+               Laser.atk--;
+           }
+        }
+        
     }
         
     public void spawnBuff()

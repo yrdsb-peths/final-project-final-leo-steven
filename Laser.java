@@ -27,7 +27,6 @@ public class Laser extends Actor
     public void act()
     {
         moveLaser();
-        timer();
         
         if(isTouching(Bomb.class))
         {
@@ -44,18 +43,5 @@ public class Laser extends Actor
     public void moveLaser()
     {
         setLocation(getX(), getY() - 10);
-    }
-    
-
-    public void timer()
-    {
-        if (Buff1.timer > 0)
-        {
-            Buff1.timer--;
-            if(Buff1.timer == 0)
-            {
-                atk--;
-            }
-        }
     }
 }
