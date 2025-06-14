@@ -31,8 +31,7 @@ public class Metro extends Actor
 
         if (getY() >= 725)
         {
-            int newX =  Greenfoot.getRandomNumber(getWorld().getWidth());
-            setLocation(newX,0);
+            k
             Greenfoot.setWorld(new EndScreen());
         }
     }

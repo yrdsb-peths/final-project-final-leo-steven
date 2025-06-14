@@ -29,7 +29,8 @@ public class Bomb extends Actor
         
         if (getY() >= 700)
         {
-            getWorld().removeObject(this);
+            int newLoco =  Greenfoot.getRandomNumber(getWorld().getWidth());
+            setLocation(newLoco, 0);
         }
         
         if(isTouching(Ship.class))
