@@ -27,7 +27,7 @@ public class Bomb extends Actor
         
         setLocation(getX(), getY() + 1);
         
-        if (getY() >= 700)
+        if (getY() >= 725)
         {
             int newLoco =  Greenfoot.getRandomNumber(getWorld().getWidth());
             setLocation(newLoco, 0);
